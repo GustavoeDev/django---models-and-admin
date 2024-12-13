@@ -2,7 +2,7 @@ from django.db import models
 
 class Supplier(models.Model):
     name = models.CharField(max_length=200)
-    company_name = models.CharField(max_length=200, blank=True)
+    company_name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
 
     def __str__(self):
