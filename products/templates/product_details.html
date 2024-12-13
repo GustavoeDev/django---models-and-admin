@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produto</title>
+    <link rel="stylesheet" href="{% static 'product-details.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Loja Virtual</h1>
+    </header>
+    <main>
+      <h2>{{ product.name }}:</h2>
+      <div class="main-container">
+        <div>
+          <p>Descrição:</p>
+          {% if product.description %}
+          <span>{{ product.description }}</span>
+          {% else %}
+          <span>Este produto não tem descrição!</span>
+          {% endif %}
+        </div>
+        <div>
+          <p>Preço:</p>
+          <span>{{ product.price }}</span>
+        </div>
+        <div>
+          <p>Quantidade em estoque:</p>
+          <span>{{ product.quantity }}</span>
+        </div>
+        <div>
+          <p>Fornecedor:</p>
+          {% if product.supplier %}
+          <span>{{ product.supplier }}</span>
+          {% else %}
+          <span>Ainda não foi definido um fornecedor para este produto!</span>
+          {% endif %}
+        </div>
+        <div>
+          <p>Categoria:</p>
+          {% if product.category.exists %}
+          <span>{{ product.category.all|join:", " }}</span>
+          {% else %}
+          <span>Ainda não foi definido uma categoria para este produto!</span>
+          {% endif %}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
