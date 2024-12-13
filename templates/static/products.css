@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 2rem;
+  background-color: azure;
+  text-align: center;
+}
+
+header > h1 {
+  font-size: 2rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+main > h2 {
+  font-size: 1.5rem;
+}
+
+main > nav {
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main > nav > a {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  max-width: 200px;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+}
+
+main > nav > a:hover {
+  background-color: #ddd;
+}
